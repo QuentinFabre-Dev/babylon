@@ -84,7 +84,7 @@ function runDemo(canvasId) {
 				box = move();
 				score ++;
 				if(vie < 100 && vie+5 < 100)
-					vie+=2;
+					vie+=10;
 			}
 	}
 	
@@ -105,7 +105,7 @@ function createSkybox(scene) {
 	// Création d'une material
 	var sMaterial = new BABYLON.StandardMaterial("skyboxMaterial", scene);
 	sMaterial.backFaceCulling = false;
-	sMaterial.reflectionTexture = new BABYLON.CubeTexture("../textures/skybox", scene);
+	sMaterial.reflectionTexture = new BABYLON.CubeTexture("../textures/TropicalSunnyDay", scene);
 	sMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 	
 	// Création d'un cube avec la material adaptée
