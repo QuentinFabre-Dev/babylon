@@ -57,12 +57,13 @@ html, body {
 #scoreText
 {
     padding: 10px;
-    background-color: white;
+    background-color: black;
+    color: white;
     content: "";
-    font-size: 25px;
+    font-size: 20px;
     font-family: Roboto;
     position: absolute;
-
+    width: 170px;
     top: 30px;
     right: 30px;
     pointer-events : none;
@@ -73,12 +74,11 @@ html, body {
     padding: 10px;
     background-color: white;
     content: "";
-    font-size: 25px;
+    font-size: 20px;
     font-family: Roboto;
     position: absolute;
-	height : 45px;
-	width: 35;
-    top: 70px;
+	width: 50px;
+    top: 30px;
     right: 30px;
     pointer-events : none;
     z-index: 200;

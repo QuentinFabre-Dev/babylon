@@ -7,6 +7,8 @@ function runDemo(canvasId) {
 	var objectif = [];
 	var vie = 100;
 	var score = 0;
+	var audio = new Audio('assets/Laser_Shoot.wav');
+	var loose = new Audio('assets/loose.wav');
 
 	var lvl = document.getElementById('vieDevant');
 		
@@ -14,8 +16,10 @@ function runDemo(canvasId) {
 		vie--;
 		console.log(vie,score);
 		lvl.style.width = vie*6+"px";
+		if(vie < 5)
+			loose.play();
 		if(vie < 0)
-			document.location.href="loose.html"; 
+			{document.location.href="loose.html"; }
 	}, 300);
 
 	// Création de la scène
@@ -70,6 +74,7 @@ function runDemo(canvasId) {
 	
 	  camera.onCollide = function(collidedMesh) {
 			var thevie = document.getElementById('score');
+			
 
 			if(camera.position.y < 2)
 				camera.position = new BABYLON.Vector3(13,37,42);
@@ -77,6 +82,7 @@ function runDemo(canvasId) {
 
 			if(collidedMesh.uniqueId === box.uniqueId) {
 				//set the new camera position
+				audio.play();
 				thevie.innerHTML = score+1 +"pts";
 				console.log("BRAVO");
 				box.dispose();
@@ -142,7 +148,6 @@ function createDemoScene(scene,objectif) {
 		{ x: 15, z: 15 },
 		{ x: 15, z: -15 }
 	];
-	
 	
 	var cubeSize = 2.5;
 	
