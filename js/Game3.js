@@ -64,7 +64,7 @@ function runDemo(canvasId) {
 	var weapon = BABYLON.Mesh.CreateBox("weapon", 1, scene);
 	weapon.scaling = new BABYLON.Vector3(0.2, 0.2, 0.5);
 	weapon.material = new BABYLON.StandardMaterial("wMaterial", scene);
-	weapon.material.diffuseTexture = new BABYLON.Texture("../assets/images/ground.jpg", scene);
+	weapon.material.diffuseTexture = new BABYLON.Texture("assets/images/ground.jpg", scene);
 	weapon.position.x = 0.6;
 	weapon.position.y = -0.3; //-0.1;
 	weapon.position.z = 1; //0.4;
@@ -111,7 +111,7 @@ function createSkybox(scene) {
 	// Création d'une material
 	var sMaterial = new BABYLON.StandardMaterial("skyboxMaterial", scene);
 	sMaterial.backFaceCulling = false;
-	sMaterial.reflectionTexture = new BABYLON.CubeTexture("../textures/TropicalSunnyDay", scene);
+	sMaterial.reflectionTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
 	sMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 	
 	// Création d'un cube avec la material adaptée
@@ -121,7 +121,7 @@ function createSkybox(scene) {
 
 function move(scene){
 	var boxMaterial = new BABYLON.StandardMaterial("bMaterial", scene);
-	boxMaterial.diffuseTexture = new BABYLON.Texture("../assets/images/grounds.jpg", scene);
+	boxMaterial.diffuseTexture = new BABYLON.Texture("assets/images/grounds.jpg", scene);
 	var box = BABYLON.Mesh.CreateBox("box1", 3, scene);
 		box.tag = "enemy";
 		box.position = new BABYLON.Vector3(random(0, 50), 3 / 2, random(0, 50));
@@ -135,12 +135,12 @@ function createDemoScene(scene,objectif) {
 	var ground = BABYLON.Mesh.CreatePlane("ground", 150, scene);
 	ground.rotation.x = Math.PI / 2;
 	ground.material = new BABYLON.StandardMaterial("gMaterial", scene);
-	ground.material.diffuseTexture = new BABYLON.Texture("../assets/images/ground.jpg", scene);
+	ground.material.diffuseTexture = new BABYLON.Texture("assets/images/ground.jpg", scene);
 	ground.checkCollisions = true;
 	
 	// Et quelques cubes...
 	var boxMaterial = new BABYLON.StandardMaterial("bMaterial", scene);
-	boxMaterial.diffuseTexture = new BABYLON.Texture("../assets/images/ground.jpg", scene);
+	boxMaterial.diffuseTexture = new BABYLON.Texture("assets/images/ground.jpg", scene);
 	
 	var positions = [
 		{ x: -15, z: 15 },
