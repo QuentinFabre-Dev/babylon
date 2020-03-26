@@ -90,7 +90,7 @@ function runDemo(canvasId) {
 				box = move();
 				score ++;
 				if(vie < 100 && vie+5 < 100)
-					vie+=10;
+					vie+=6;
 			}
 	}
 	
@@ -151,7 +151,7 @@ function createDemoScene(scene,objectif) {
 	
 	var cubeSize = 2.5;
 	
-	for (var i = 0; i < 15; i++) {
+	for (var i = 0; i < 115; i++) {
 		var box = BABYLON.Mesh.CreateBox("box1", cubeSize, scene);
 		box.tag = "enemy";
 		box.position = new BABYLON.Vector3(random(-70, 70), cubeSize / 2, random(-70, 70));
